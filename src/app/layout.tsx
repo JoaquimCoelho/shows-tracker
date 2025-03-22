@@ -10,16 +10,16 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
     return (
         <html lang="en">
-        <body className="min-h-screen bg-gray-100">
+        <body className="min-h-screen bg-black">
         <nav className="bg-purple-900 p-4">
             <ul className="flex justify-between items-center">
                 <li>
-                    <Link href="/search">
+                    <Link href="/search" className='text-white'>
                         Search
                     </Link>
                 </li>
                 <li>
-                    <Link href="/login">
+                    <Link href="/login" className='text-white'>
                         Login
                     </Link>
                 </li>
