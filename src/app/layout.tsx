@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { ReactNode } from 'react';
 
 export const metadata = {
-    title: 'My Next.js App',
-    description: 'Converted from PHP to Next.js with Tailwind CSS',
+    title: 'show tracker',
+    description: 'Website to track your watched shows',
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
