@@ -79,7 +79,7 @@
 
 
     <?php
-    $apiKey = '7c69e26e161baeb732fd2ac0602520ec';
+    $apiKey = 'redacted :)';
     $searchQuery = isset($_POST["tvshow"]) ? urlencode($_POST["tvshow"]) : ""; // Get search query from form submission
     $order = isset($_POST["order"]) ? $_POST["order"] : 'popularity.desc'; // Get order from form submission or use default value
 
