@@ -1,6 +1,4 @@
 import { NextResponse } from 'next/server';
-export const dynamic = "force-static";
-
 
 const apiKey = process.env.API_KEY || '';
 const url = 'https://api.themoviedb.org/3/search/tv?api_key=' + apiKey + '&language=en-US';
