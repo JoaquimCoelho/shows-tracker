@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import Link from 'next/link';
 import { SearchResponse } from "@/app/costum-types/show";
 import { ShowCard } from "@/app/components/show-card";
 
