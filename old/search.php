@@ -79,7 +79,7 @@
 
 
     <?php
-    $apiKey = 'REDACTED_TMDB_API_KEY';
+    $apiKey = 'redacted :)';
     $searchQuery = isset($_POST["tvshow"]) ? urlencode($_POST["tvshow"]) : ""; // Get search query from form submission
     $order = isset($_POST["order"]) ? $_POST["order"] : 'popularity.desc'; // Get order from form submission or use default value
 

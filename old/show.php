@@ -104,7 +104,7 @@ if (isset($_SESSION['logged'])) {
     <?php
 
     if (isset($_GET['id'])) {
-        $apiKey = 'REDACTED_TMDB_API_KEY';
+        $apiKey = 'redacted :)';
         $tvShowId = $_GET['id'];
         $url = "https://api.themoviedb.org/3/tv/$tvShowId?api_key=$apiKey&language=en-US";
 
