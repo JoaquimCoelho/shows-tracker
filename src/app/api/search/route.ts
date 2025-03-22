@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+/*import { NextResponse } from 'next/server';
 
 
 const apiKey = process.env.API_KEY || '';
@@ -11,4 +11,4 @@ export async function GET(request: Request) {
     const result = await response.json();
 
     return NextResponse.json(result);
-}
+}*/
