@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+/*import { NextResponse } from 'next/server';
 
 export async function GET(request: Request, { params }: { params: { id: string } }) {
     const { id } = params;
@@ -10,4 +10,4 @@ export async function GET(request: Request, { params }: { params: { id: string }
         poster: 'https://via.placeholder.com/150'
     };
     return NextResponse.json(show);
-}
+}*/
