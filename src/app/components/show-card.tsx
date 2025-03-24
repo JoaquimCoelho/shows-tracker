@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { Show } from "@/app/costum-types/show";
+import { Show } from "@/app/custom-types/show";
 
 type Props = {
   show: Show
