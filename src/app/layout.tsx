@@ -1,33 +1,30 @@
-import './globals.css';
-import Link from 'next/link';
-import { ReactNode } from 'react';
+import "./globals.css";
+import { StackProvider, StackTheme } from "@stackframe/stack";
+import { stackServerApp } from "@/stack";
+import { ReactNode } from "react";
+import { NavBar } from "@/app/components/navbar";
+import { ThemeProvider } from "next-themes";
 
 export const metadata = {
-    title: 'show tracker',
-    description: 'Website to track your watched shows',
+  title: "show tracker",
+  description: "Website to track your watched shows",
 };
 
-export default function RootLayout({ children }: { children: ReactNode }) {
-    return (
-        <html lang="en">
-        <body className="min-h-screen bg-black">
-        <nav className="bg-purple-900 p-4">
-            <ul className="flex justify-between items-center">
-                <li>
-                    <Link href="/search" className='text-white'>
-                        Search
-                    </Link>
-                </li>
-                <li>
-                    <Link href="/login" className='text-white'>
-                        Login
-                    </Link>
-                </li>
-            </ul>
-        </nav>
-        <main className="container mx-auto p-4">{children}</main>
-        </body>
-        </html>
-    );
-}
+export default async function RootLayout({ children }: { children: ReactNode }) {
+  const user = await stackServerApp.getUser();
 
+  return (
+    <html lang="en">
+      <body className="min-h-screen">
+        <StackProvider app={stackServerApp}>
+          <ThemeProvider defaultTheme="dark" attribute="class">
+          <StackTheme>
+            <NavBar loggedIn={!!user} />
+            <main className="container mx-auto p-4">{children}</main>
+          </StackTheme>
+          </ThemeProvider>
+        </StackProvider>
+      </body>
+    </html>
+  );
+}

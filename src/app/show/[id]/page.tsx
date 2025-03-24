@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
-import {TVShowDetails} from "@/app/costum-types/show";
+import {TVShowDetails} from "@/app/custom-types/show";
 
 export default function ShowPage() {
     const { id } = useParams() as { id: string };

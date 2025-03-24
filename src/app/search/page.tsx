@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { SearchResponse } from "@/app/costum-types/show";
+import { SearchResponse } from "@/app/custom-types/show";
 import { ShowCard } from "@/app/components/show-card";
 
 export default function SearchPage() {
