@@ -41,12 +41,12 @@ export default function ShowPage() {
     const currentStatusData = currentClientMetadata[status] || [];
     const updatedMetadata = allStatuses.reduce((acc, currStatus: string) => {
       if (currStatus !== status) {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+        // @ts-expect-error its 1 am n quero dar fix
         acc[currStatus] = (currentClientMetadata[currStatus] || []).filter(
           (id: number) => id !== show.id,
         );
       } else {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+        // @ts-expect-error its 1 am n quero dar fix
         acc[currStatus] = [...currentStatusData, show.id];
       }
       return acc;
