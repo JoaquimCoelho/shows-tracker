@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^2.2.0",
+    "@heroicons/react": "^2.2.0",
     "@neondatabase/serverless": "^0.10.4",
     "@stackframe/stack": "^2.7.30",
     "@types/bcrypt": "^5.0.2",
