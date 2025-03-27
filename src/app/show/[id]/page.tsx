@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
-import { Show, TVShowDetails } from "@/app/custom-types/show";
+import { TVShowDetails } from "@/app/custom-types/show";
 import { useUser } from "@stackframe/stack";
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import {
@@ -41,12 +41,12 @@ export default function ShowPage() {
     const currentStatusData = currentClientMetadata[status] || [];
     const updatedMetadata = allStatuses.reduce((acc, currStatus: string) => {
       if (currStatus !== status) {
-        // @ts-ignore
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         acc[currStatus] = (currentClientMetadata[currStatus] || []).filter(
           (id: number) => id !== show.id,
         );
       } else {
-        // @ts-ignore
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         acc[currStatus] = [...currentStatusData, show.id];
       }
       return acc;
@@ -86,7 +86,7 @@ export default function ShowPage() {
               <MenuButton className="inline-flex items-center gap-2 rounded-md border-1 border-white py-1.5 px-3 text-sm/6 font-semibold text-white focus:outline-none data-[hover]:bg-gray-700 data-[open]:bg-gray-700 data-[focus]:outline-1 data-[focus]:outline-white">
                 {allStatuses.map((statusName) =>
                   user.clientMetadata?.[statusName]?.includes(show.id) ? (
-                    <p>
+                    <p key={statusName}>
                       {statusName.charAt(0).toUpperCase() + statusName.slice(1)}
                     </p>
                   ) : null,
