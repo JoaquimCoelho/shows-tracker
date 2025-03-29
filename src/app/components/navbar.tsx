@@ -5,6 +5,10 @@ import React from "react";
 import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
 import { SignIn } from "@stackframe/stack";
 import { ColorModeSwitcher } from "@/app/components/theme-switcher";
+import {
+  HomeIcon,
+  MagnifyingGlassCircleIcon,
+} from "@heroicons/react/16/solid";
 
 type Props = {
   loggedIn: boolean;
@@ -16,12 +20,15 @@ export const NavBar: React.FC<Props> = async ({ loggedIn }) => {
       <nav className="bg-purple-900 p-4">
         <ul className="flex justify-between items-center">
           <li>
+            <Link href="/" className="text-white">
+              <HomeIcon className="size-8 fill-white/30"/>
+            </Link>
             <Link href="/search" className="text-white">
-              Search
+              <MagnifyingGlassCircleIcon className="size-8 fill-white/30"/>
             </Link>
           </li>
           <li>
-            <ColorModeSwitcher />
+            {/* <ColorModeSwitcher /> */}
           </li>
           <li>
             <Popover>

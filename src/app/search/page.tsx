@@ -17,21 +17,17 @@ export default function SearchPage() {
 
     return (
         <div className="text-center">
-            <h2 className="text-2xl mb-4 text-purple-900">Search TV Shows</h2>
             <form onSubmit={handleSearch} className="flex justify-center mb-8">
                 <input
                     type="text"
-                    placeholder="Search..."
+                    placeholder="Search"
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
-                    className="p-2 border border-purple-900 rounded-l text-white"
+                    className="p-2 text-center border border-purple-900 rounded text-white"
                 />
-                <button type="submit" className="bg-purple-900 text-white p-2 rounded-r hover:bg-purple-700">
-                    Search
-                </button>
             </form>
             <div className="flex flex-wrap justify-center">
-                {results?.results.map((show) => (
+                {results?.results?.map((show) => (
                     <ShowCard key={show.id} show={show} />
                 ))}
             </div>
