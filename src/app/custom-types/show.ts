@@ -1,25 +1,27 @@
 export type Show = {
-  adult: boolean;
+  adult: boolean | true
   backdrop_path: string;
   genre_ids: number[];
-  id: number;
+  id: number | null;
   origin_country: string[];
   original_language: string;
   original_name: string;
   overview: string;
-  popularity: number;
+  popularity: number | null;
   poster_path: string;
   first_air_date: string;
   name: string;
-  vote_average: number;
-  vote_count: number;
+  vote_average: number | null;
+  vote_count: number | null;
 }
 
-export type SearchResponse = {
-  page: number;
-  results: Show[];
-  total_pages: number;
-  total_results: number;
+export type SearchShowResponse = {
+  show?: {
+    page: number | null;
+    results: Show[];
+    total_pages: number;
+    total_results: number;
+  };
 }
 
 export type TVShowDetails = {
@@ -56,34 +58,6 @@ export type TVShowDetails = {
   vote_average: number;
   vote_count: number;
 }
-
-export type MovieDetails = {
-  adult: boolean | true;
-  backdrop_path: string;
-  belongs_to_collection: string;
-  budget: number | null;
-  genres: Genre[];
-  homepage: string;
-  id: number | null;
-  imdb_id: string;
-  original_language: string;
-  original_title: string;
-  overview: string;
-  popularity: number | null;
-  poster_path: string;
-  production_companies: ProductionCompany[];
-  production_countries: ProductionCountry[];
-  release_date: string;
-  revenue: number | null;
-  runtime: number | null;
-  spoken_languages: SpokenLanguage[];
-  status: string;
-  tagline: string;
-  title: string;
-  video: boolean | true;
-  vote_average: number | null;
-  vote_count: number | null;
-};
 
 export type Creator = {
   id: number;
