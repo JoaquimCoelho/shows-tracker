@@ -13,4 +13,4 @@ export const ShowCard: React.FC<Props> = ({ show }) => (
     </div>
     <h2 className="text-purple-900 truncate font-semibold">{show.name}</h2>
   </Link>
-  )
+)

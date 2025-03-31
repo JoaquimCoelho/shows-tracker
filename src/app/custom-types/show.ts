@@ -1,25 +1,27 @@
 export type Show = {
-  adult: boolean;
+  adult: boolean | true
   backdrop_path: string;
   genre_ids: number[];
-  id: number;
+  id: number | null;
   origin_country: string[];
   original_language: string;
   original_name: string;
   overview: string;
-  popularity: number;
+  popularity: number | null;
   poster_path: string;
   first_air_date: string;
   name: string;
-  vote_average: number;
-  vote_count: number;
+  vote_average: number | null;
+  vote_count: number | null;
 }
 
-export type SearchResponse = {
-  page: number;
-  results: Show[];
-  total_pages: number;
-  total_results: number;
+export type SearchShowResponse = {
+  show?: {
+    page: number | null;
+    results: Show[];
+    total_pages: number;
+    total_results: number;
+  };
 }
 
 export type TVShowDetails = {
@@ -67,7 +69,7 @@ export type Creator = {
 }
 
 export type Genre = {
-  id: number;
+  id: number | null;
   name: string;
 }
 
@@ -95,7 +97,7 @@ export type Network = {
 }
 
 export type ProductionCompany = {
-  id: number;
+  id: number | null;
   logo_path: string;
   name: string;
   origin_country: string;
