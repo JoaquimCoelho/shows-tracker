@@ -24,7 +24,7 @@ export const NavBar: React.FC<Props> = async ({ loggedIn }) => {
             <Link href="/" className="text-white">
               <HomeIcon className="size-8 fill-white/75"/>
             </Link>
-            <Link href="search" className="text-white">
+            <Link href="/search" className="text-white">
               <MagnifyingGlassCircleIcon className="size-8 fill-white/75"/>
             </Link>
           </li>
