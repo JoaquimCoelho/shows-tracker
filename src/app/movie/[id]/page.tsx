@@ -65,7 +65,7 @@ export default function MoviePage() {
     return <div className="text-center text-purple-900">Loading...</div>;
   }else{
     return (
-      <div className="flex mx-auto bg-gray-900 p-6 rounded shadow">
+      <div className="flex mx-auto bg-purple-900 p-6 rounded shadow">
         <div className="w-1/3">
           <img
             src={"https://image.tmdb.org/t/p/w500/" + movie.poster_path}
@@ -74,13 +74,33 @@ export default function MoviePage() {
           />
         </div>
         <div className="w-2/3 pl-6">
-          <h1 className="text-3xl mb-4">{movie.title}</h1>
-          <p className="mb-4">{movie.overview}</p>
-          <p className="mb-4">Rating: {movie.vote_average}</p>
+          <h1 className="text-3xl mb-5">{movie.title}</h1>
+          <div className="ml-4 mb-2 bg-purple-950 rounded border border-purple-950">
+            <p className="ml-2 mt-2">Status:</p>
+            <p className="ml-4 mb-3 rounded">{movie.status}</p>
+            <p className="ml-2 mt-2">Tagline:</p>
+            <p className="ml-4 mb-3 rounded">{movie.tagline}</p>
+            <p className="ml-2 mt-2">Overview:</p>
+            <p className="ml-4 mb-3 rounded">{movie.overview}</p>
+          </div>
+          <div className="ml-4 rounded border">
+            <p className="ml-4 mb-2 mt-4 rounded">Rating: {movie.vote_average.toLocaleString(undefined, {maximumFractionDigits:1})}</p>
+            <p className="ml-4 mb-2 rounded">
+              Genres: {movie.genres.map((genre) => genre.name).join(", ")}
+            </p>
+            <p className="ml-4 mb-2 rounded">Language: {movie.original_language}</p>
+            <p className="ml-4 mb-2 rounded">Has Adult Content: {(movie.adult == true) ? "Yes" : "No"}</p>
+            <p className="ml-4 mb-2 rounded">Duration: {movie.runtime} minutes</p>
+            <p className="ml-4 mb-2 rounded">Release Date: {new Date(movie.release_date).toLocaleDateString("en-GB")}</p>
+            <p className="ml-4 mb-2 rounded">{movie.video}</p>
+            <p className="ml-4 mb-4 rounded">
+              Prod. Countries: {movie.production_countries.map((production_countries) => production_countries.name).join(", ")}
+            </p>
+          </div>
           {user && (
             <div className="w-52">
               <Menu>
-                <MenuButton className="inline-flex items-center gap-2 rounded-md border-1 border-white py-1.5 px-3 text-sm/6 font-semibold text-white focus:outline-none data-[hover]:bg-gray-700 data-[open]:bg-gray-700 data-[focus]:outline-1 data-[focus]:outline-white">
+                <MenuButton className="inline-flex items-center gap-2 rounded-md border-1 border-white ml-4 mt-5 py-1.5 px-3 text-sm/6 font-semibold text-white focus:outline-none data-[hover]:bg-gray-700 data-[open]:bg-gray-700 data-[focus]:outline-1 data-[focus]:outline-white">
                   {allStatuses.map((statusName) =>
                     user.clientMetadata?.[statusName]?.includes(movie.id) ? (
                       <p key={statusName}>

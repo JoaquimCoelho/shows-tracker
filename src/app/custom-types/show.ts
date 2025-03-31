@@ -1,23 +1,23 @@
 export type Show = {
-  adult: boolean | true
+  adult: boolean;
   backdrop_path: string;
   genre_ids: number[];
-  id: number | null;
+  id: number;
   origin_country: string[];
   original_language: string;
   original_name: string;
   overview: string;
-  popularity: number | null;
+  popularity: number;
   poster_path: string;
   first_air_date: string;
   name: string;
-  vote_average: number | null;
-  vote_count: number | null;
+  vote_average: number;
+  vote_count: number;
 }
 
 export type SearchShowResponse = {
   show?: {
-    page: number | null;
+    page: number;
     results: Show[];
     total_pages: number;
     total_results: number;
@@ -38,7 +38,7 @@ export type TVShowDetails = {
   last_air_date: string;
   last_episode_to_air: Episode;
   name: string;
-  next_episode_to_air: Episode | null;
+  next_episode_to_air: Episode;
   networks: Network[];
   number_of_episodes: number;
   number_of_seasons: number;
@@ -69,7 +69,7 @@ export type Creator = {
 }
 
 export type Genre = {
-  id: number | null;
+  id: number;
   name: string;
 }
 
@@ -97,7 +97,7 @@ export type Network = {
 }
 
 export type ProductionCompany = {
-  id: number | null;
+  id: number;
   logo_path: string;
   name: string;
   origin_country: string;
