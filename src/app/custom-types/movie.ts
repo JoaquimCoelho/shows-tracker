@@ -1,23 +1,23 @@
 export type Movie = {
-  adult: boolean | true
+  adult: boolean;
   backdrop_path: string;
   genre_ids: number[];
-  id: number | null;
+  id: number;
   origin_language: string;
   original_title: string;
   overview: string;
-  popularity: number | null;
+  popularity: number;
   poster_path: string;
   release_date: string;
   title: string;
-  video: boolean | true;
-  vote_average: number | null;
-  vote_count: number | null;
+  video: boolean;
+  vote_average: number;
+  vote_count: number;
 }
 
 export type SearchMovieResponse = {
   movie? : {
-    page: number | null;
+    page: number;
     results: Movie[];
     total_pages: number;
     total_results: number;
@@ -25,40 +25,40 @@ export type SearchMovieResponse = {
 }
 
 export type MovieDetails = {
-    adult: boolean | true;
+    adult: boolean;
     backdrop_path: string;
     belongs_to_collection: string;
-    budget: number | null;
+    budget: number;
     genres: Genre[];
     homepage: string;
-    id: number | null;
+    id: number;
     imdb_id: string;
     original_language: string;
     original_title: string;
     overview: string;
-    popularity: number | null;
+    popularity: number;
     poster_path: string;
     production_companies: ProductionCompany[];
     production_countries: ProductionCountry[];
     release_date: string;
-    revenue: number | null;
-    runtime: number | null;
+    revenue: number;
+    runtime: number;
     spoken_languages: SpokenLanguage[];
     status: string;
     tagline: string;
     title: string;
-    video: boolean | true;
-    vote_average: number | null;
-    vote_count: number | null;
+    video: boolean;
+    vote_average: number;
+    vote_count: number;
 };
 
 export type Genre = {
-    id: number | null;
+    id: number;
     name: string;
 }
 
 export type ProductionCompany = {
-    id: number | null;
+    id: number;
     logo_path: string;
     name: string;
     origin_country: string;
