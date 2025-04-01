@@ -25,18 +25,18 @@ export default function SearchPage() {
         <div className="text-center">
             <form onSubmit={handleSearch} className="flex justify-center m-8">
                 <input type="text" placeholder="Search" value={query} onChange={(e) => setQuery(e.target.value)}
-                    className="p-2 text-center border border-purple-900 rounded text-white"
+                    className="p-2 focus:outline-none text-center border border-white rounded text-white"
                 />
             </form>
 
             <div className="flex justify-center gap-4 mb-4">
-                <button onClick={() => setFilter('all')} className="px-4 py-2 bg-gray-700 text-white rounded">
+                <button onClick={() => setFilter('all')} className="cursor-pointer px-4 py-2 bg-white transition duration-200 ease-in-out hover:bg-[#A1A1AA] active:bg-[#71717A] text-[#18181B] rounded">
                     Show All
                 </button>
-                <button onClick={() => setFilter('shows')} className="px-4 py-2 bg-purple-700 text-white rounded">
+                <button onClick={() => setFilter('shows')} className="cursor-pointer px-4 py-2 bg-[#004493] transition duration-200 ease-in-out hover:bg-[#002E62] active:bg-[#001731] text-white rounded">
                     TV Shows
                 </button>
-                <button onClick={() => setFilter('movies')} className="px-4 py-2 bg-blue-700 text-white rounded">
+                <button onClick={() => setFilter('movies')} className="cursor-pointer px-4 py-2 bg-[#920B3A] transition duration-200 ease-in-out hover:bg-[#610726] active:bg-[#310413] text-white rounded">
                     Movies
                 </button>
             </div>

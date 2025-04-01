@@ -7,10 +7,10 @@ type Props = {
 }
 
 export const MovieCard: React.FC<Props> = ({ movie }) => (
-  <Link className="bg-gray-900 border rounded w-44 m-2 p-2 shadow hover:scale-105 transition transform" key={movie.id} href={`/movie/${movie.id}`}>
+  <Link className="bg-[#18181B] border border-[#920B3A] rounded w-44 m-2 p-2 shadow hover:scale-105 transition transform  group hover:bg-[#920B3A]" key={movie.id} href={`/movie/${movie.id}`}>
     <div className="mb-2">
-      <img src={'https://image.tmdb.org/t/p/w500/' + movie.poster_path} alt={movie.title} className="w-full h-56 object-cover" />
+      <img src={'https://image.tmdb.org/t/p/w500/' + movie.poster_path} alt={movie.title} className="w-full h-56 object-cover group-hover:fill-[#FAA0BF]" />
     </div>
-    <h2 className="text-purple-900 truncate font-semibold">{movie.title}</h2>
+    <h2 className="text-[#FAA0BF] truncate font-semibold transition duration-200 group-hover:text-white">{movie.title}</h2>
   </Link>
 )
