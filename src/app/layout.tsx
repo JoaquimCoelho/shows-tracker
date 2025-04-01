@@ -14,12 +14,12 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
   const user = await stackServerApp.getUser();
 
   return (
-    <html lang="en">
+    <html lang="en" className=" bg-[#0a0a0a]">
       <body className="min-h-screen">
         <StackProvider app={stackServerApp}>
           <ThemeProvider defaultTheme="dark" attribute="class">
           <StackTheme>
-            <NavBar loggedIn={!!user} />
+            <NavBar loggedIn={!!user}/>
             <main className="container mx-auto p-4">{children}</main>
           </StackTheme>
           </ThemeProvider>
